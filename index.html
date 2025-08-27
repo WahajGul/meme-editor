@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Meme Editor</h1>
+            <p>Create your own custom memes!</p>
+        </header>
+
+        <div class="editor-layout">
+            <!-- Template Selection -->
+            <div class="template-section">
+                <h3>Choose a Template</h3>
+                <div class="template-grid">
+                    <div class="template-item active" data-template="assets/img01.jpg">
+                        <img src="assets/img01.jpg" alt="Template 1">
+                    </div>
+                    <div class="template-item" data-template="assets/img02.jpg">
+                        <img src="assets/img02.jpg" alt="Template 2">
+                    </div>
+                    <div class="template-item" data-template="assets/img03.jpg">
+                        <img src="assets/img03.jpg" alt="Template 3">
+                    </div>
+                    <div class="template-item" data-template="assets/img04.jpg">
+                        <img src="assets/img04.jpg" alt="Template 4">
+                    </div>
+                    <div class="template-item" data-template="assets/img05.jpg">
+                        <img src="assets/img05.jpg" alt="Template 5">
+                    </div>
+                    <div class="template-item" data-template="assets/img06.png">
+                        <img src="assets/img06.png" alt="Template 6">
+                    </div>
+                    <div class="template-item" data-template="assets/img07.jpg">
+                        <img src="assets/img07.jpg" alt="Template 7">
+                    </div>
+                    <div class="template-item" data-template="assets/img08.png">
+                        <img src="assets/img08.png" alt="Template 8">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme Canvas -->
+            <div class="canvas-section">
+                <div class="meme-canvas" id="memeCanvas">
+                    <img id="templateImage" src="assets/img01.jpg" alt="Meme Template">
+                    <div class="text-overlay top-text" id="topText" contenteditable="true">TOP TEXT</div>
+                    <div class="text-overlay bottom-text" id="bottomText" contenteditable="true">BOTTOM TEXT</div>
+                </div>
+                <div class="canvas-controls">
+                    <button id="downloadBtn" class="btn btn-primary">📥 Download Meme</button>
+                    <button id="resetBtn" class="btn btn-secondary">🔄 Reset</button>
+                </div>
+            </div>
+
+            <!-- Text Controls -->
+            <div class="controls-section">
+                <h3>Text Customization</h3>
+                
+                <div class="control-group">
+                    <label>Select Text:</label>
+                    <div class="text-selector">
+                        <button class="text-btn active" data-target="topText">Top Text</button>
+                        <button class="text-btn" data-target="bottomText">Bottom Text</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="fontFamily">Font Family:</label>
+                    <select id="fontFamily">
+                        <option value="Impact">Impact</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="fontSize">Font Size:</label>
+                    <input type="range" id="fontSize" min="16" max="60" value="32">
+                    <span id="fontSizeValue">32px</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="textColor">Text Color:</label>
+                    <input type="color" id="textColor" value="#ffffff">
+                </div>
+
+                <div class="control-group">
+                    <label for="strokeColor">Stroke Color:</label>
+                    <input type="color" id="strokeColor" value="#000000">
+                </div>
+
+                <div class="control-group">
+                    <label for="strokeWidth">Stroke Width:</label>
+                    <input type="range" id="strokeWidth" min="0" max="5" value="2" step="0.5">
+                    <span id="strokeWidthValue">2px</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Text Style:</label>
+                    <div class="style-buttons">
+                        <button id="boldBtn" class="style-btn">Bold</button>
+                        <button id="italicBtn" class="style-btn">Italic</button>
+                        <button id="uppercaseBtn" class="style-btn">UPPERCASE</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="textAlign">Text Align:</label>
+                    <select id="textAlign">
+                        <option value="center">Center</option>
+                        <option value="left">Left</option>
+                        <option value="right">Right</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <button id="addTextBtn" class="btn btn-success">➕ Add New Text</button>
+                    <button id="removeTextBtn" class="btn btn-danger">🗑️ Remove Text</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
